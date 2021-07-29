@@ -143,3 +143,13 @@ app.on("ready", () => {
 ```
 
 After that you can run `npm start` in your app folder. open [Package and distribute your application](https://www.electronjs.org/docs/tutorial/quick-start#package-and-distribute-your-application) for more information guide to distribute your app. for more **Electron.js** guide see the Documentation [HERE](https://www.electronjs.org/docs/README).
+
+## 🦄- Clone
+If you want to skip the tutorial, you can clone this project:
+```sh
+git clone https://github.com/Loneth/ElectronFlash
+```
+and then install the package Dependencies from `package.json` by doing:
+```sh
+npm install
+```
