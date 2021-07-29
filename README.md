@@ -1,5 +1,5 @@
 # 📝- ElectronFlash
-This guide will step you through the process of creating a barebones Electron app in Electron to allow your app running a Flash with **Pepperflash Plugin** version **32.0.0.371**, if you lazy and want to clone this repo look at here.
+This guide will step you through the process of creating a barebones Electron app in Electron to allow your app running a Flash with **Pepperflash Plugin** version **32.0.0.371**, if you lazy and want to clone this repo look at [here](https://github.com/Loneth/ElectronFlash/blob/main/README.md#--clone).
 
 To use Electron, you need to install [Node.js](https://nodejs.org/en/download/). I recommend that you use the latest `LTS` version available.
 > Please install Node.js using pre-built installers for your platform. You may encounter incompatibility issues with different development tools otherwise.
