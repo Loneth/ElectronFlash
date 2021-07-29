@@ -1,5 +1,5 @@
 # ElectronFlash
-This guide will step you through the process of creating a barebones Electron app in Electron, to allow your app running a Flash with Pepperflash Plugin(32.0.0.371).
+This guide will step you through the process of creating a barebones Electron app in Electron to allow your app running a Flash with Pepperflash Plugin(32.0.0.371), if you lazy and want to clone this repo look at [here](https://github.com/Loneth/ElectronFlash/blob/main/README.md#--clone).
 
 ## 📝- Prerequisites
 To use Electron, you need to install [Node.js](https://nodejs.org/en/download/). I recommend that you use the latest LTS version available. Please install pre-built installers for your platform. You may encounter incompatibility issues with different development tools otherwise.
@@ -99,7 +99,7 @@ npm start
 **NOTE:** This script tells Electron to run on your project's root folder. At this stage, your app will immediately throw an error telling you that it cannot find an app to run.
 
 ## 🐮- Create a web page
-Before we can create a window for our application, Download the [Pepflashplayer Plugin Here](https://mega.nz/file/DDJTXawC#UxIfKcj98zFfp1-5ql-EjgeR769wWZJuzSnexTv84Rk) and then extrach the `pepflashplayer.dll` in your app folder in that case put the file in `YourAppName/plugins/pepflashplayer.dll`, After that create the content that will be loaded into it. In Electron, each window displays web contents that can be loaded from either from a local HTML file or a remote URL.
+Before we can create a window for our application, Download the [Pepflashplayer Plugin Here](https://github.com/Loneth/ElectronFlash/tree/main/plugin) and then extrach the `pepflashplayer.dll` in your app folder in that case put the file in `YourAppName/plugins/pepflashplayer.dll`, After that create the content that will be loaded into it. In Electron, each window displays web contents that can be loaded from either from a local HTML file or a remote URL.
 
 For this tutorial, you will be doing the former. Create an `main.js` file in the app folder of your project:
 ```javascript
