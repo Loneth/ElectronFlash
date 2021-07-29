@@ -1,8 +1,8 @@
-# ElectronFlash
-This guide will step you through the process of creating a barebones Electron app in Electron to allow your app running a Flash with Pepperflash Plugin(32.0.0.371), if you lazy and want to clone this repo look at [here](https://github.com/Loneth/ElectronFlash/blob/main/README.md#--clone).
+# 📝- ElectronFlash
+This guide will step you through the process of creating a barebones Electron app in Electron to allow your app running a Flash with **Pepperflash Plugin** version **32.0.0.371**, if you lazy and want to clone this repo look at here.
 
-## 📝- Prerequisites
-To use Electron, you need to install [Node.js](https://nodejs.org/en/download/). I recommend that you use the latest LTS version available. Please install pre-built installers for your platform. You may encounter incompatibility issues with different development tools otherwise.
+To use Electron, you need to install [Node.js](https://nodejs.org/en/download/). I recommend that you use the latest `LTS` version available.
+> Please install Node.js using pre-built installers for your platform. You may encounter incompatibility issues with different development tools otherwise.
 
 To check that Node.js was installed correctly, type the following commands in your terminal client:
 ```sh
@@ -11,20 +11,19 @@ npm -v
 ```
 The commands should print the versions of Node.js and npm accordingly.
 
-**NOTE:** Since Electron embeds Node.js into its binary, the version of Node.js running your code is unrelated to the version running on your system.
+**Note:** Since Electron embeds Node.js into its binary, the version of Node.js running your code is unrelated to the version running on your system.
 
-## 💥- Create your application
-Electron apps follow the same general structure as other Node.js projects. **Start by creating a folder** and **initializing an npm package.**
+# 💥- Quick Start
+Electron apps follow the same general structure as other Node.js projects. Start by creating a folder and initializing an npm package.
 ```sh
 mkdir your-app-name && cd your-app-name
 npm init
 ```
 The interactive `init` command will prompt you to set some fields in your config. There are a few rules to follow for the purposes of this tutorial:
-
 * `entry point` should be `main.js`.
-* `author` and `description` can be any value, but are necessary for **app packaging**.
+* `author` and `description` can be any value, but are necessary for app [app packaging](https://www.electronjs.org/docs/tutorial/quick-start#package-and-distribute-your-application).
 
-example `package.json` file should look something like this:
+Your package.json file should look something like this:
 ```javascript
 {
   "name": "Alter-Dimension",
@@ -35,46 +34,27 @@ example `package.json` file should look something like this:
   "license": "MIT"
 }
 ```
-**NOTE:** YOUR `package.json` SHOULD BE IN YOUR APP FOLDER.
-
-## 🐩- Installation
-In this case we will install **older version of prebuilt Electron binaries** because Electron no longer supports the Pepper Flash plugin, as Chrome has removed support.
-
-Field of your `package.json` config, add a start command like so:
+We will use the old version of **prebuilt Electron binaries** because Electron no longer supports the Pepper Flash plugin, as Chrome has removed support. install the `electron` package into your app's `devDependencies`.
 ```sh
-"devDependencies": {
-  "electron": "8.1.0"
-}
+npm install electron@8.1.0
 ```
-**AND AFTER YOU ADD THE DEPENDECIES IT SHOULD BE LIKE THIS:**
-```javascript
-{
-  "name": "Alter-Dimension",
-  "version": "1.0.0",
-  "description": "The best AQW World Private Server! maded with kathleen's love and the slaves",
-  "main": "main.js",
-  "author": "Zueira",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "8.1.0"
-  }
-}
-```
-Then, install the electron package into your app's devDependencies. **OPEN CMD(Command Prompt) IN YOUR APP FOLDER AND RUN THIS COMMAND:**
-```sh
-npm install electron --save-dev
-```
-For more installation options and troubleshooting tips, see [installation](https://github.com/electron/electron/blob/main/docs/tutorial/installation.md). For info on how to manage Electron versions in your apps, see [Electron versioning](https://github.com/electron/electron/blob/main/docs/tutorial/electron-versioning.md).
+> Note: If you're encountering any issues with installing Electron, please refer to the [Advanced Installation](https://www.electronjs.org/docs/tutorial/installation) guide.
 
 Finally, you want to be able to execute Electron. In the `scripts` field of your `package.json` config, add a `start` command like so:
-```javascript
+```sh
 {
   "scripts": {
     "start": "electron ."
   }
 }
 ```
-And it will look like this:
+This `start` command will let you open your app in development mode.
+```sh
+npm start
+```
+> Note: This script tells Electron to run on your project's root folder. At this stage, your app will immediately throw an error telling you that it cannot find an app to run.
+
+Example the full code of `package.json`:
 ```javascript
 {
   "name": "Alter-Dimension",
@@ -92,16 +72,8 @@ And it will look like this:
   }
 }
 ```
-This `start` command will let you open your app in development mode.
-```sh
-npm start
-```
-**NOTE:** This script tells Electron to run on your project's root folder. At this stage, your app will immediately throw an error telling you that it cannot find an app to run.
-
 ## 🐮- Create a web page
-Before we can create a window for our application, Download the [Pepflashplayer Plugin Here](https://github.com/Loneth/ElectronFlash/tree/main/plugin) and then extrach the `pepflashplayer.dll` in your app folder in that case put the file in `YourAppName/plugin/pepflashplayer.dll`, After that create the content that will be loaded into it. In Electron, each window displays web contents that can be loaded from either from a local HTML file or a remote URL.
-
-For this tutorial, you will be doing the former. Create an `main.js` file in the app folder of your project:
+Before we can create a window for our application, Download the [Pepflashplayer Plugin Here](https://mega.nz/file/DDJTXawC#UxIfKcj98zFfp1-5ql-EjgeR769wWZJuzSnexTv84Rk). extract the `pepflashplayer.dll` in your app folder, in this case put the file in `YourAppName/plugin/pepflashplayer.dll`. Create an `main.js` file in the app folder of your project:
 ```javascript
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
@@ -142,10 +114,13 @@ app.on("ready", () => {
 });
 ```
 
-After that you can run `npm start` in your app folder. open [Package and distribute your application](https://www.electronjs.org/docs/tutorial/quick-start#package-and-distribute-your-application) for more information guide to distribute your app. for more **Electron.js** guide see the Documentation [HERE](https://www.electronjs.org/docs/README).
+Open CMD (Command Prompt) in your app folder and run `npm start`. For more information about Electron Documentation click [here](https://www.electronjs.org/docs/tutorial/quick-start#package-and-distribute-your-application)
+> Note: At this point, your Electron application should successfully open a window!
+
+If you want to distribute your app, you can look at the official electron guide [here](https://www.electronjs.org/docs/tutorial/quick-start#package-and-distribute-your-application).
 
 ## 🦄- Clone
-If you want to skip the tutorial, you can clone this project:
+Clone this repo from your terminal:
 ```sh
 git clone https://github.com/Loneth/ElectronFlash
 ```
