@@ -36,7 +36,7 @@ Your package.json file should look something like this:
 ```
 We will use the old version of **prebuilt Electron binaries** because Electron no longer supports the Pepper Flash plugin, as Chrome has removed support. install the `electron` package into your app's `devDependencies`.
 ```sh
-npm install electron@8.1.0
+npm install --save-dev electron@8.1.0
 ```
 > Note: If you're encountering any issues with installing Electron, please refer to the [Advanced Installation](https://www.electronjs.org/docs/tutorial/installation) guide.
 
